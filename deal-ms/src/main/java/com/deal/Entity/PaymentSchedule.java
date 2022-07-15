@@ -1,5 +1,6 @@
 package com.deal.Entity;
 
+import com.CreditConveyor.DTO.PaymentScheduleElementDTO;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -33,8 +34,13 @@ public class PaymentSchedule {
 
     private BigDecimal remainInDebt;
 
-    @ManyToOne
-    @JoinColumn(name = "credit_id")
-    private Credit credit;
+    public PaymentSchedule (PaymentScheduleElementDTO paymentScheduleElementDTO) {
+        number = paymentScheduleElementDTO.getNumber();
+        date = paymentScheduleElementDTO.getDate();
+        totalPayment = paymentScheduleElementDTO.getTotalPayment();
+        interestPayment = paymentScheduleElementDTO.getInterestPayment();
+        debtPayment = paymentScheduleElementDTO.getDebtPayment();
+        remainInDebt = paymentScheduleElementDTO.getRemainInDebt();
+    }
 
 }

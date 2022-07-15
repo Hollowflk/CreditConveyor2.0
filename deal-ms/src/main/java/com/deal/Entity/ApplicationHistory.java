@@ -5,6 +5,7 @@ import com.deal.Enums.ChangeType;
 import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -25,8 +26,13 @@ public class ApplicationHistory {
 
     private LocalDateTime time;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "application_id")
     private Application application;
 
+    public ApplicationHistory(Application application) {
+        status = application.getStatus();
+        time = LocalDateTime.now();
+        this.application = application;
+    }
 }

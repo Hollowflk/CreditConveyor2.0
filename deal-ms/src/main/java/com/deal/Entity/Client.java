@@ -42,7 +42,7 @@ public class Client {
     @JoinColumn(name = "passport_id")
     private Passport passport;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "employment_id")
     private Employment employment;
 

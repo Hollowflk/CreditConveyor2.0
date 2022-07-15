@@ -1,5 +1,6 @@
 package com.deal.Entity;
 
+import com.CreditConveyor.DTO.EmploymentDTO;
 import com.CreditConveyor.Enums.PositionAtWork;
 import com.CreditConveyor.Enums.WorkStatus;
 import lombok.AllArgsConstructor;
@@ -22,15 +23,27 @@ public class Employment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Enumerated(EnumType.STRING)
     private WorkStatus employment_status;
 
     private String employer;
 
     private BigDecimal salary;
 
+    @Enumerated(EnumType.STRING)
     private PositionAtWork position;
 
     private Integer work_experience_total;
 
     private Integer work_experience_current;
+
+    public Employment(EmploymentDTO employmentDTO) {
+        employment_status = employmentDTO.getEmploymentStatus();
+        employer = employmentDTO.getEmployerINN();
+        salary = employmentDTO.getSalary();
+        position = employmentDTO.getPosition();
+        work_experience_total = employmentDTO.getWorkExperienceTotal();
+        work_experience_current = employmentDTO.getWorkExperienceCurrent();
+
+    }
 }

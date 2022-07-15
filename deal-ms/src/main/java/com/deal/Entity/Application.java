@@ -1,10 +1,7 @@
 package com.deal.Entity;
 
 import com.deal.Enums.ApplicationStatus;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -26,7 +23,7 @@ public class Application {
     @JoinColumn(name = "client_id")
     private Client client;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "credit_id")
     private Credit credit;
 
