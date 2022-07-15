@@ -1,12 +1,15 @@
 package com.CreditConveyor.DTO;
 
+import com.CreditConveyor.Enums.Gender;
+import com.CreditConveyor.Enums.MaritalStatus;
+
 import java.time.LocalDate;
 
 public class FinishRegistrationRequestDTO {
 
-    private Enum gender;
+    private Gender gender;
 
-    private Enum maritalStatus;
+    private MaritalStatus maritalStatus;
 
     private Integer dependentAmount;
 
