@@ -3,10 +3,7 @@ package com.deal.Entity;
 import com.CreditConveyor.DTO.EmploymentDTO;
 import com.CreditConveyor.Enums.PositionAtWork;
 import com.CreditConveyor.Enums.WorkStatus;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -16,6 +13,7 @@ import java.math.BigDecimal;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @Table(name = "employment")
 public class Employment {
 

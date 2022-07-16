@@ -2,10 +2,7 @@ package com.deal.Entity;
 
 import com.CreditConveyor.DTO.CreditDTO;
 import com.deal.Enums.CreditStatus;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -18,6 +15,8 @@ import java.util.stream.Collectors;
 @Getter
 @Setter
 @NoArgsConstructor
+@Builder
+@AllArgsConstructor
 @Table(name = "credit")
 public class Credit {
 

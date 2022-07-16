@@ -11,8 +11,8 @@ public class ApplicationService {
     @Autowired
     private ApplicationRepository repository;
 
-    public void save (Application application){
-        repository.save(application);
+    public Application save (Application application){
+        return repository.save(application);
     }
 
     public Application findById (Long id){
