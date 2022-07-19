@@ -39,7 +39,7 @@ public class DealService {
 
             Application application = new Application(client);
 
-            application.setCreation_date(LocalDate.now());
+            application.setCreationDate(LocalDate.now());
 
             application.setStatus(ApplicationStatus.PREAPPROVAL);
 

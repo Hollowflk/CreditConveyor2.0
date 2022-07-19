@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 
-@FeignClient(name = "creditConveyor", url = "http://localhost:8080/conveyor")
+@FeignClient(name = "creditConveyor", url = "${app.feign.config.url}")
 public interface FeignClientService {
 
     @RequestMapping(method = RequestMethod.POST, value = "/offers")

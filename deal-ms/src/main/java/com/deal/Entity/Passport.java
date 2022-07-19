@@ -22,7 +22,7 @@ public class Passport {
 
     private String number;
 
-    private LocalDate issue_date;
+    private LocalDate issueDate;
 
-    private String issue_branch;
+    private String issueBranch;
 }

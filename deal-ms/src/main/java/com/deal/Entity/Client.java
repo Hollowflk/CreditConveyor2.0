@@ -34,9 +34,9 @@ public class Client {
     private Gender gender;
 
     @Enumerated(EnumType.STRING)
-    private MaritalStatus marital_status;
+    private MaritalStatus maritalStatus;
 
-    private Integer dependent_amount;
+    private Integer dependentAmount;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "passport_id")

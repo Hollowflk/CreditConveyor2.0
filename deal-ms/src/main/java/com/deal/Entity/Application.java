@@ -31,7 +31,7 @@ public class Application {
     @Enumerated(EnumType.STRING)
     private ApplicationStatus status;
 
-    private LocalDate creation_date;
+    private LocalDate creationDate;
 
     @OneToOne(cascade = CascadeType.ALL)
     private LoanOffer appliedOffer;

@@ -56,12 +56,12 @@ public class ScoringService {
         log.info("Обновление данных в заявке №{}", application.getId());
 
         application.getClient().setGender(requestDTO.getGender());
-        application.getClient().setMarital_status(requestDTO.getMaritalStatus());
-        application.getClient().setDependent_amount(requestDTO.getDependentAmount());
+        application.getClient().setMaritalStatus(requestDTO.getMaritalStatus());
+        application.getClient().setDependentAmount(requestDTO.getDependentAmount());
         application.getClient().setEmployment(new Employment(requestDTO.getEmployment()));
         application.getClient().setAccount(requestDTO.getAccount());
-        application.getClient().getPassport().setIssue_branch(requestDTO.getPassportIssueBranch());
-        application.getClient().getPassport().setIssue_date(requestDTO.getPassportIssueDate());
+        application.getClient().getPassport().setIssueBranch(requestDTO.getPassportIssueBranch());
+        application.getClient().getPassport().setIssueDate(requestDTO.getPassportIssueDate());
 
         log.info("Данные успешно обновлены");
     }

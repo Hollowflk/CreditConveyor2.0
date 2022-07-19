@@ -22,7 +22,7 @@ public class Employment {
     private Integer id;
 
     @Enumerated(EnumType.STRING)
-    private WorkStatus employment_status;
+    private WorkStatus employmentStatus;
 
     private String employer;
 
@@ -31,17 +31,17 @@ public class Employment {
     @Enumerated(EnumType.STRING)
     private PositionAtWork position;
 
-    private Integer work_experience_total;
+    private Integer workExperienceTotal;
 
-    private Integer work_experience_current;
+    private Integer workExperienceCurrent;
 
     public Employment(EmploymentDTO employmentDTO) {
-        employment_status = employmentDTO.getEmploymentStatus();
+        employmentStatus = employmentDTO.getEmploymentStatus();
         employer = employmentDTO.getEmployerINN();
         salary = employmentDTO.getSalary();
         position = employmentDTO.getPosition();
-        work_experience_total = employmentDTO.getWorkExperienceTotal();
-        work_experience_current = employmentDTO.getWorkExperienceCurrent();
+        workExperienceTotal = employmentDTO.getWorkExperienceTotal();
+        workExperienceCurrent = employmentDTO.getWorkExperienceCurrent();
 
     }
 }

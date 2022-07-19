@@ -36,11 +36,11 @@ public class Credit {
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "credit_id")
-    private List<PaymentSchedule> payment_schedule;
+    private List<PaymentSchedule> paymentSchedule;
 
-    private Boolean is_insurance_enabled;
+    private Boolean is_insuranceEnabled;
 
-    private Boolean is_salary_client;
+    private Boolean is_salaryClient;
 
     @Enumerated(EnumType.STRING)
     private CreditStatus credit_status;
@@ -55,8 +55,8 @@ public class Credit {
                 .stream()
                 .map(PaymentSchedule::new)
                 .collect(Collectors.toList());
-        payment_schedule = schedules;
-        is_insurance_enabled = creditDTO.getIsInsuranceEnabled();
-        is_salary_client = creditDTO.getIsSalaryClient();
+        paymentSchedule = schedules;
+        is_insuranceEnabled = creditDTO.getIsInsuranceEnabled();
+        is_salaryClient = creditDTO.getIsSalaryClient();
     }
 }
