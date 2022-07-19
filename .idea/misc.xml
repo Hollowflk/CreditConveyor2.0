@@ -4,6 +4,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/credit-conveyor-ms/pom.xml" />
+        <option value="$PROJECT_DIR$/deal-ms/pom.xml" />
       </list>
     </option>
   </component>

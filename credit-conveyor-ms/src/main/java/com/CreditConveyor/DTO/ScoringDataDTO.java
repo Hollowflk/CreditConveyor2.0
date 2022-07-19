@@ -3,10 +3,7 @@ package com.CreditConveyor.DTO;
 import com.CreditConveyor.Enums.Gender;
 import com.CreditConveyor.Enums.MaritalStatus;
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
@@ -20,6 +17,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Getter
 @Setter
+@Builder
 public class ScoringDataDTO {
 
     @Min(10000)

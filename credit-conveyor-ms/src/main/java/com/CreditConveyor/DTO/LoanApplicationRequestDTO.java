@@ -1,9 +1,6 @@
 package com.CreditConveyor.DTO;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.validation.constraints.*;
 import java.math.BigDecimal;
@@ -14,6 +11,7 @@ import java.time.LocalDate;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class LoanApplicationRequestDTO{
 
 
