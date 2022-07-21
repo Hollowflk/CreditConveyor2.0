@@ -1,0 +1,60 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-table-client
+      author: Nikita Bykov
+      changes:
+        - createTable:
+            tableName: client
+            columns:
+              - column:
+                  name: client_id
+                  type: integer
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: text
+              - column:
+                  name: first_name
+                  type: text
+              - column:
+                  name: middle_name
+                  type: text
+              - column:
+                  name: birth_date
+                  type: date
+              - column:
+                  name: email
+                  type: text
+              - column:
+                  name: gender
+                  type: text
+              - column:
+                  name: marital_status
+                  type: text
+              - column:
+                  name: dependent_amount
+                  type: integer
+              - column:
+                  name: passport_id
+                  type: integer
+              - column:
+                  name: employment_id
+                  type: integer
+              - column:
+                  name: account
+                  type: text
+        - addForeignKeyConstraint:
+            baseTableName: client
+            baseColumnNames: passport_id
+            constraintName: client_passport_fk
+            referencedTableName: passport
+            referencedColumnNames: passport_id
+        - addForeignKeyConstraint:
+            baseTableName: client
+            baseColumnNames: employment_id
+            constraintName: client_employment_id
+            referencedTableName: employment
+            referencedColumnNames: employment_id

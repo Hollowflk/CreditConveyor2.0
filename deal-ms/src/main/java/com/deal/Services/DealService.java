@@ -64,10 +64,10 @@ public class DealService {
         log.info("Create client");
 
         Client client = Client.builder()
-                .last_name(requestDTO.getLastName())
-                .first_name(requestDTO.getFirstName())
-                .middle_name(requestDTO.getMiddleName())
-                .birth_date(requestDTO.getBirthdate())
+                .lastName(requestDTO.getLastName())
+                .firstName(requestDTO.getFirstName())
+                .middleName(requestDTO.getMiddleName())
+                .birthDate(requestDTO.getBirthdate())
                 .email(requestDTO.getEmail())
                 .passport(createPassport(requestDTO))
                 .build();
@@ -87,7 +87,7 @@ public class DealService {
 
         Application application = applicationService.findById(loanOfferDTO.getApplicationId());
 
-        application.setSign_date(LocalDate.now());
+        application.setSignDate(LocalDate.now());
 
         log.info("Выбрана заявка: " + application.getId());
 
@@ -95,26 +95,26 @@ public class DealService {
 
         log.info("У заявки {} изменен статус на {}", application.getId(), application.getStatus());
 
-        application.setStatus_history(createApplicationHistory(application));
+        application.setStatusHistory(createApplicationHistory(application));
 
         application.setAppliedOffer(new LoanOffer(loanOfferDTO));
 
         applicationService.save(application);
 
-        log.info("Заявка сохоаннена в бд");
+        log.info("Заявка сохраннена в бд");
     }
 
     @Transactional
     private List<ApplicationHistory> createApplicationHistory (Application application){
 
         if (application.getStatus() != null){
-            if (application.getStatus_history() == null) {
+            if (application.getStatusHistory() == null) {
                 List<ApplicationHistory> applicationHistories = new ArrayList<>();
             }
-            application.getStatus_history().add(new ApplicationHistory(application));
+            application.getStatusHistory().add(new ApplicationHistory(application));
         }
 
-        return application.getStatus_history();
+        return application.getStatusHistory();
     }
 
     @Transactional
@@ -132,11 +132,11 @@ public class DealService {
 
         CreditDTO credit = feignClientService.getCredit(scoringDataDTO);
 
-        log.info("Кредит создан");
-
         application.setCredit(new Credit(credit));
         application.setStatus(ApplicationStatus.CREDIT_ISSUED);
-        application.setStatus_history(createApplicationHistory(application));
+        application.setStatusHistory(createApplicationHistory(application));
+
+        log.info("Кредит создан");
 
     }
 

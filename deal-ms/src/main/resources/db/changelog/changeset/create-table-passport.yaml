@@ -1,0 +1,27 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-table-passport
+      author: Nikita Bykov
+      changes:
+        - createTable:
+            tableName: passport
+            columns:
+              - column:
+                  name: passport_id
+                  type: integer
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: series
+                  type: varchar(4)
+              - column:
+                  name: number
+                  type: varchar(6)
+              - column:
+                  name: issue_date
+                  type: date
+              - column:
+                  name: issue_branch
+                  type: text

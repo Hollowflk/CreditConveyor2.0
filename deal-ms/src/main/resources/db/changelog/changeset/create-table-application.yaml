@@ -1,0 +1,51 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-table-application
+      author: Nikita Bykov
+      changes:
+        - createTable:
+            tableName: application
+            columns:
+              - column:
+                  name: application_id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: client_id
+                  type: integer
+              - column:
+                  name: credit_id
+                  type: integer
+              - column:
+                  name: status
+                  type: text
+              - column:
+                  name: creation_date
+                  type: date
+              - column:
+                  name: applied_offer_loan_offer_id
+                  type: integer
+              - column:
+                  name: sign_date
+                  type: date
+              - column:
+                  name: ses_code
+                  type: text
+              - column:
+                  name: status_history
+                  type: bigint
+        - addForeignKeyConstraint:
+            baseTableName: application
+            baseColumnNames: client_id
+            constraintName: application_client
+            referencedTableName: client
+            referencedColumnNames: client_id
+        - addForeignKeyConstraint:
+            baseTableName: application
+            baseColumnNames: credit_id
+            constraintName: application_credit
+            referencedTableName: credit
+            referencedColumnNames: credit_id

@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-table-payment_schedule
+      author: Nikita Bykov
+      changes:
+        - createTable:
+            tableName: payment_schedule
+            columns:
+              - column:
+                  name: payment_id
+                  type: integer
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: number
+                  type: integer
+              - column:
+                  name: date
+                  type: date
+              - column:
+                  name: total_payment
+                  type: decimal
+              - column:
+                  name: interest_payment
+                  type: decimal
+              - column:
+                  name: debt_payment
+                  type: decimal
+              - column:
+                  name: remain_in_debt
+                  type: decimal
+              - column:
+                  name: credit_id
+                  type: integer

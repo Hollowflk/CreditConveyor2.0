@@ -15,24 +15,30 @@ import java.time.LocalDate;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "paymentSchedule")
+@Table(name = "payment_schedule")
 public class PaymentSchedule {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "payment_id")
     private Integer id;
 
     private Integer number;
 
     private LocalDate date;
 
+    @Column(name = "total_payment")
     private BigDecimal totalPayment;
 
+    @Column(name = "interest_payment")
     private BigDecimal interestPayment;
 
+    @Column(name = "debt_payment")
     private BigDecimal debtPayment;
 
+    @Column(name = "remain_in_debt")
     private BigDecimal remainInDebt;
+
 
     public PaymentSchedule (PaymentScheduleElementDTO paymentScheduleElementDTO) {
         number = paymentScheduleElementDTO.getNumber();
