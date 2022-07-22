@@ -1,0 +1,39 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-table-loan_offer
+      author: Nikita Bykov
+      changes:
+        - createTable:
+            tableName: loan_offer
+            columns:
+              - column:
+                  name: loan_offer_id
+                  type: integer
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: application_id
+                  type: bigint
+              - column:
+                  name: requested_amount
+                  type: decimal
+              - column:
+                  name: total_amount
+                  type: decimal
+              - column:
+                  name: term
+                  type: integer
+              - column:
+                  name: monthly_payment
+                  type: decimal
+              - column:
+                  name: rate
+                  type: decimal
+              - column:
+                  name: is_insurance_enabled
+                  type: boolean
+              - column:
+                  name: is_salary_client
+                  type: boolean

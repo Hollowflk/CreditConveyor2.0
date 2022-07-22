@@ -18,6 +18,7 @@ public class Application {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "application_id")
     private Long id;
 
     @ManyToOne
@@ -31,17 +32,21 @@ public class Application {
     @Enumerated(EnumType.STRING)
     private ApplicationStatus status;
 
+    @Column(name = "creation_date")
     private LocalDate creationDate;
 
     @OneToOne(cascade = CascadeType.ALL)
     private LoanOffer appliedOffer;
 
-    private LocalDate sign_date;
+    @Column(name = "sign_date")
+    private LocalDate signDate;
 
-    private String ses_code;
+    @Column(name = "ses_code")
+    private String sesCode;
 
     @OneToMany(mappedBy = "application", cascade = CascadeType.ALL)
-    private List<ApplicationHistory> status_history;
+    @Column(name = "status_history")
+    private List<ApplicationHistory> statusHistory;
 
     public Application(Client client) {
         this.client = client;

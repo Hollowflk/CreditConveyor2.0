@@ -14,11 +14,12 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "applicationHistory")
+@Table(name = "application_history")
 public class ApplicationHistory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "application_history_id")
     private Long id;
 
     @Enumerated(EnumType.STRING)

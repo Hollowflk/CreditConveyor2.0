@@ -19,9 +19,11 @@ public class Employment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "employment_id")
     private Integer id;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "employment_status")
     private WorkStatus employmentStatus;
 
     private String employer;
@@ -31,8 +33,10 @@ public class Employment {
     @Enumerated(EnumType.STRING)
     private PositionAtWork position;
 
+    @Column(name = "work_experience_total")
     private Integer workExperienceTotal;
 
+    @Column(name = "work_experience_current")
     private Integer workExperienceCurrent;
 
     public Employment(EmploymentDTO employmentDTO) {

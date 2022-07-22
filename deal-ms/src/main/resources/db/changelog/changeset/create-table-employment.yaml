@@ -1,0 +1,33 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-table-employment
+      author: Nikita Bykov
+      changes:
+        - createTable:
+            tableName: employment
+            columns:
+              - column:
+                  name: employment_id
+                  type: integer
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: employment_status
+                  type: text
+              - column:
+                  name: employer
+                  type: text
+              - column:
+                  name: position
+                  type: text
+              - column:
+                  name: salary
+                  type: decimal
+              - column:
+                  name: work_experience_total
+                  type: integer
+              - column:
+                  name: work_experience_current
+                  type: integer

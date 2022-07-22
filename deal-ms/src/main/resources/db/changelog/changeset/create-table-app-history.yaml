@@ -1,0 +1,24 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-table-application_history
+      author: Nikita Bykov
+      changes:
+        - createTable:
+            tableName: application_history
+            columns:
+              - column:
+                  name: application_history_id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: status
+                  type: text
+              - column:
+                  name: time
+                  type: TIMESTAMP
+              - column:
+                  name: application_id
+                  type: bigint

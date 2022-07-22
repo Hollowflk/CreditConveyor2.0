@@ -22,13 +22,15 @@ public class Credit {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "credit_id")
     private Integer id;
 
     private BigDecimal amount;
 
     private Integer term;
 
-    private BigDecimal monthly_payment;
+    @Column(name = "monthly_payment")
+    private BigDecimal monthlyPayment;
 
     private BigDecimal rate;
 
@@ -36,19 +38,23 @@ public class Credit {
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "credit_id")
+    @Column(name = "payment_schedule")
     private List<PaymentSchedule> paymentSchedule;
 
-    private Boolean is_insuranceEnabled;
+    @Column(name = "is_insurance_enabled")
+    private Boolean isInsuranceEnabled;
 
-    private Boolean is_salaryClient;
+    @Column(name = "is_salary_client")
+    private Boolean isSalaryClient;
 
     @Enumerated(EnumType.STRING)
-    private CreditStatus credit_status;
+    @Column(name = "credit_status")
+    private CreditStatus creditStatus;
 
     public Credit (CreditDTO creditDTO) {
         amount = creditDTO.getAmount();
         term = creditDTO.getTerm();
-        monthly_payment = creditDTO.getMonthlyPayment();
+        monthlyPayment = creditDTO.getMonthlyPayment();
         rate = creditDTO.getRate();
         psk = creditDTO.getPsk();
         List<PaymentSchedule> schedules = creditDTO.getPaymentSchedule()
@@ -56,7 +62,7 @@ public class Credit {
                 .map(PaymentSchedule::new)
                 .collect(Collectors.toList());
         paymentSchedule = schedules;
-        is_insuranceEnabled = creditDTO.getIsInsuranceEnabled();
-        is_salaryClient = creditDTO.getIsSalaryClient();
+        isInsuranceEnabled = creditDTO.getIsInsuranceEnabled();
+        isSalaryClient = creditDTO.getIsSalaryClient();
     }
 }

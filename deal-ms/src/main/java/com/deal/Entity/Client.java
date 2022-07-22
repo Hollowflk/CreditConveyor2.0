@@ -18,15 +18,20 @@ public class Client {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "client_id")
     private Integer id;
 
-    private String last_name;
+    @Column(name = "last_name")
+    private String lastName;
 
-    private String first_name;
+    @Column(name = "first_name")
+    private String firstName;
 
-    private String middle_name;
+    @Column(name = "middle_name")
+    private String middleName;
 
-    private LocalDate birth_date;
+    @Column(name = "birth_date")
+    private LocalDate birthDate;
 
     private String email;
 
@@ -34,8 +39,10 @@ public class Client {
     private Gender gender;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "marital_status")
     private MaritalStatus maritalStatus;
 
+    @Column(name = "dependent_amount")
     private Integer dependentAmount;
 
     @OneToOne(cascade = CascadeType.ALL)
@@ -46,5 +53,6 @@ public class Client {
     @JoinColumn(name = "employment_id")
     private Employment employment;
 
+    @Column(name = "account")
     private String account;
 }

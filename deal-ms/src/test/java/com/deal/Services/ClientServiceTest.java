@@ -38,10 +38,10 @@ class ClientServiceTest {
                 .build();
 
         Client client = Client.builder()
-                .last_name(requestDTO.getLastName())
-                .first_name(requestDTO.getFirstName())
-                .middle_name(requestDTO.getMiddleName())
-                .birth_date(requestDTO.getBirthdate())
+                .lastName(requestDTO.getLastName())
+                .firstName(requestDTO.getFirstName())
+                .middleName(requestDTO.getMiddleName())
+                .birthDate(requestDTO.getBirthdate())
                 .passport(Passport.builder()
                         .series(requestDTO.getPassportSeries())
                         .series(requestDTO.getPassportSeries())

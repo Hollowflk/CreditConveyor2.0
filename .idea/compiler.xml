@@ -7,17 +7,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="application-ms" />
         <module name="credit-conveyor-ms" />
         <module name="deal-ms" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="application-ms" target="17" />
       <module name="credit-conveyor-ms" target="17" />
       <module name="deal-ms" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="application-ms" options="-parameters" />
       <module name="credit-conveyor-ms" options="-parameters" />
       <module name="deal-ms" options="-parameters" />
     </option>

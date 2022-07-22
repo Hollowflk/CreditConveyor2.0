@@ -16,13 +16,16 @@ public class Passport {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "passport_id")
     private Integer id;
 
     private String series;
 
     private String number;
 
+    @Column(name = "issue_date")
     private LocalDate issueDate;
 
+    @Column(name = "issue_branch")
     private String issueBranch;
 }
